@@ -305,7 +305,7 @@ public class FlutterBluePlugin implements FlutterPlugin, ActivityAware, MethodCa
 
                 // New request, connect and add gattServer to Map
                 BluetoothGatt gattServer;
-                gattServer = device.connectGatt(context, options.getAndroidAutoConnect(), mGattCallback, BluetoothDevice.TRANSPORT_LE);
+                gattServer = device.connectGatt(context, false, mGattCallback, BluetoothDevice.TRANSPORT_LE);
                 mDevices.put(deviceId, new BluetoothDeviceCache(gattServer));
                 result.success(null);
                 break;
